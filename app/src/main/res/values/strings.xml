@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">myTV_android_app</string>
+
+
+
+    <!-- Login Activity -->
+    <string name="login">Σύνδεση</string>
+    <string name="new_user">Νέος χρήστης; Εγγραφή εδώ!</string>
+    <string name="forgot_pass">Ξέχασες τον κωδικό σού;</string>
+    <string name="email">Email...</string>
+    <string name="password">Κωδικός...</string>
+    <string name="log_in_success">Επιτυχής σύνδεση!</string>
+    <string name="log_in_error">Σφάλμα σύνδεσης </string>
+    <string name="email_empty">Κένη διεύθυνση email!</string>
+    <string name="password_empty">Κενό πεδίο κωδικού!</string>
+
+    <!-- Register Activity -->
+    <string name="register">Εγγραφή</string>
+    <string name="old_user">Ήδη χρήστης; Σύνδεση εδώ!</string>
+    <string name="password_again">Κωδικός ξανά...</string>
+    <string name="success_register">Επιτυχής εγγραφή!</string>
+    <string name="error_register">Σφάλμα εγγραφής </string>
+    <string name="passwords_not_match">Οι κωδικοί δεν ταιριάζουν!</string>
+    <string name="email_not_valid">Μη έγκυρο email!</string>
+    <string name="password_confirm">Επιβεβαιώστε τον κωδικό!</string>
+    <string name="password_length_error">Ο κωδικός πρέπει να έχει τουλάχιστον 6 χαρακτήρες!</string>
+    <string name="fav_category">Αγαπημένη κατηγορία σειρών</string>
+    <string-array name="tv_categories">
+        <item>Δράση/Περιπέτεια</item>
+        <item>Αστυνομικά</item>
+        <item>Κωμωδία</item>
+        <item>Φαντασίας</item>
+        <item>Κοινωνικά/Δραματικά</item>
+    </string-array>
+
+    <!-- Forgot Password Activity -->
+    <string name="enter_mail_app">Το email σού, στην εφαρμογή...</string>
+    <string name="recover">Ανάκτηση κωδικού</string>
+    <string name="back">Πίσω</string>
+    <string name="check_inbox_recover">Έλεγξε τα εισερχόμενά σού, για το link ανάκτησης.</string>
+
+    <!-- Main Activity -->
+    <string name="appTitle">myTV app</string>
+
+    <string name="log_out_main">Επιτυχής έξοδος!</string>
+    <string name="logOut">Έξοδος</string>
+    <string name="about">Σχετικά</string>
+    <string name="profile">Προφίλ</string>
+    <string name="monday">Δευτέρα</string>
+    <string name="tuesday">Τρίτη</string>
+    <string name="wednesday">Τετάρτη</string>
+    <string name="thursday">Πέμπτη</string>
+    <string name="friday">Παρασκευή</string>
+    <string name="saturday">Σάββατο</string>
+    <string name="sunday">Κυριακή</string>
+
+</resources>
