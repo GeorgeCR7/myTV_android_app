@@ -6,28 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginTop="30dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="@+id/btnUsersProposals"
+        app:layout_constraintStart_toStartOf="@+id/btnUsersProposals"
+        app:layout_constraintTop_toBottomOf="@+id/btnUsersProposals" />
+
+    <TextView
+        android:id="@+id/txtAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="174dp"
+        android:gravity="center"
+        android:text="@string/appTitle"
+        android:textSize="50sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtAppTitle"
+        app:layout_constraintStart_toStartOf="@+id/txtAppTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtAppTitle" />
+
+    <Button
+        android:id="@+id/btnAllShows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:text="@string/all_shows"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtDate"
+        app:layout_constraintStart_toStartOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtAppTitle" />
+
+    <Button
+        android:id="@+id/btnAppProposals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:text="@string/app_proposals"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnAllShows"
+        app:layout_constraintStart_toStartOf="@+id/btnAllShows"
+        app:layout_constraintTop_toBottomOf="@+id/btnAllShows" />
+
+    <Button
+        android:id="@+id/btnUsersProposals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:text="@string/users_proposals"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnAppProposals"
+        app:layout_constraintStart_toStartOf="@+id/btnAppProposals"
+        app:layout_constraintTop_toBottomOf="@+id/btnAppProposals" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        android:backgroundTint="#D38005"
+        android:gravity="center"
+        android:text="@string/profile"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnUsersProposals"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/btnUsersProposals"
+        app:layout_constraintTop_toBottomOf="@+id/btnUsersProposals" />
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#EC0505"
+        android:gravity="center"
+        android:text="@string/logOut"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnProfile"
+        app:layout_constraintStart_toStartOf="@+id/btnProfile"
+        app:layout_constraintTop_toBottomOf="@+id/btnProfile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@
     <string name="app_name">myTV_android_app</string>
 
 
-
     <!-- Login Activity -->
     <string name="login">Σύνδεση</string>
     <string name="new_user">Νέος χρήστης; Εγγραφή εδώ!</string>
@@ -41,7 +40,9 @@
 
     <!-- Main Activity -->
     <string name="appTitle">myTV app</string>
-
+    <string name="app_proposals">Προτάσεις εφαρμογής</string>
+    <string name="users_proposals">Προτάσεις χρηστών</string>
+    <string name="all_shows">Όλες οι σειρές</string>
     <string name="log_out_main">Επιτυχής έξοδος!</string>
     <string name="logOut">Έξοδος</string>
     <string name="about">Σχετικά</string>
@@ -53,5 +54,16 @@
     <string name="friday">Παρασκευή</string>
     <string name="saturday">Σάββατο</string>
     <string name="sunday">Κυριακή</string>
+
+    <!-- Profile Activity -->
+    <string name="save_changes">Αποθήκευση</string>
+    <string name="date_account_created">Ημερομηνία δημιουργίας λογαριασμού</string>
+    <string name="full_name">Ονοματεπώνυμο</string>
+    <string name="no_name">Δεν υπάρχει όνομα</string>
+    <string name="age">Ηλικία</string>
+    <string name="no_age">Δεν υπάρχει ηλικία</string>
+    <string name="country">Χώρα</string>
+    <string name="no_country">Δεν υπάρχει χώρα</string>
+    <string name="update_user_profile">Επιτυχής ενημέρωση προφίλ!</string>
 
 </resources>
