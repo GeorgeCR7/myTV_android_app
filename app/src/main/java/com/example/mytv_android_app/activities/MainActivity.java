@@ -10,13 +10,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mytv_android_app.R;
 import com.example.mytv_android_app.models.TVShow;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -68,20 +72,34 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(view -> {
 
-            /*TVShow tvShow1 = new TVShow("Breaking Bad",
+            TVShow tvShow1 = new TVShow("Breaking Bad",
+                    getResources().getString(R.string.action_cat),
                     "https://www.youtube.com/watch?v=HhesaQXLuRY",
-                    1);
+                    R.drawable.breaking_bad);
 
             TVShow tvShow2 = new TVShow("Dexter",
+                    getResources().getString(R.string.crime_cat),
                     "https://www.youtube.com/watch?v=YQeUmSD1c3g",
-                    2);
+                    R.drawable.dexter);
+
+            TVShow tvShow3 = new TVShow("The Walking Dead",
+                    getResources().getString(R.string.fantasy_cat),
+                    "https://www.youtube.com/watch?v=sfAc2U20uyg",
+                    R.drawable.the_walking_dead);
+
+            TVShow tvShow4 = new TVShow("Prison Break",
+                    getResources().getString(R.string.action_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.prison_break);
 
             tvShows.add(tvShow1);
             tvShows.add(tvShow2);
+            tvShows.add(tvShow3);
+            tvShows.add(tvShow4);
 
             for (TVShow tvShow : tvShows){
                 reference.child(""+tvShow.getName()).setValue(tvShow);
-            }*/
+            }
 
             /*Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
@@ -91,6 +109,22 @@ public class MainActivity extends AppCompatActivity {
         /////////////////////////////////////////////////
 
         btnAllShows.setOnClickListener(view -> {
+
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        TVShow tvShow = dataSnapshot.getValue(TVShow.class);
+                        tvShows.add(tvShow);
+                    }
+                    Intent intent = new Intent(MainActivity.this, TVListActivity.class);
+                    intent.putParcelableArrayListExtra("TV_LIST", tvShows);
+                    startActivity(intent);
+                    finish();
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}
+            });
 
         });
 

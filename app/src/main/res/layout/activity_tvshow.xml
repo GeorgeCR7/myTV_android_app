@@ -6,4 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".activities.TVShowActivity">
 
+    <ImageView
+        android:id="@+id/tvShowImg"
+        android:layout_width="330dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/txtTVShowNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:text="@string/tv_show_name"
+        android:textColor="#000000"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvShowImg"
+        app:layout_constraintStart_toStartOf="@+id/tvShowImg"
+        app:layout_constraintTop_toBottomOf="@+id/tvShowImg" />
+
+    <TextView
+        android:id="@+id/txtTVShowNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:textColor="#13487C"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtTVShowNameLabel"
+        app:layout_constraintStart_toStartOf="@+id/txtTVShowNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtTVShowNameLabel" />
+
+    <TextView
+        android:id="@+id/txtTVShowCategLabel"
+        android:layout_width="300dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/tv_show_categ"
+        android:textColor="#000000"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtTVShowNameValue"
+        app:layout_constraintStart_toStartOf="@+id/txtTVShowNameValue"
+        app:layout_constraintTop_toBottomOf="@+id/txtTVShowNameValue" />
+
+    <TextView
+        android:id="@+id/txtTVShowCategValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:textColor="#13487C"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtTVShowCategLabel"
+        app:layout_constraintStart_toStartOf="@+id/txtTVShowCategLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtTVShowCategLabel" />
+
+    <Button
+        android:id="@+id/btnBackTVShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="#D33A3A"
+        android:gravity="center"
+        android:text="@string/back"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFavoriteTVShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#0F82DD"
+        android:gravity="center"
+        android:text="@string/favorite"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnTVShowTrailer"
+        app:layout_constraintStart_toStartOf="@+id/btnTVShowTrailer"
+        app:layout_constraintTop_toBottomOf="@+id/btnTVShowTrailer" />
+
+    <Button
+        android:id="@+id/btnTVShowTrailer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#218025"
+        android:gravity="center"
+        android:text="Trailer"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtTVShowCategValue"
+        app:layout_constraintStart_toStartOf="@+id/txtTVShowCategValue"
+        app:layout_constraintTop_toBottomOf="@+id/txtTVShowCategLabel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
