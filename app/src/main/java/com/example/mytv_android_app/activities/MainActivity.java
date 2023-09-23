@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mytv_android_app.R;
 import com.example.mytv_android_app.models.TVShow;
+import com.example.mytv_android_app.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
     Button btnProfile, btnLogOut;
 
     FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    DatabaseReference reference, referenceUsers;
     FirebaseAuth mAuth;
 
     ArrayList<TVShow> tvShows;
+    ArrayList<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
         //////////////////////////////////////////////
+
+
         txtAppTitle = findViewById(R.id.txtAppTitle);
         //colorMainAppTitle(txtAppTitle.getText().toString());
 
@@ -67,8 +71,10 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("TV_Shows");
+        referenceUsers = rootNode.getReference("Users");
 
         tvShows = new ArrayList<>();
+        users = new ArrayList<>();
 
         button.setOnClickListener(view -> {
 
@@ -94,28 +100,83 @@ public class MainActivity extends AppCompatActivity {
 
             TVShow tvShow5 = new TVShow("Chuck",
                     getResources().getString(R.string.action_cat),
-                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    "https://www.youtube.com/watch?v=gSaua8MSDzg",
                     R.drawable.chuck);
 
             TVShow tvShow6 = new TVShow("Marvel's Daredevil",
                     getResources().getString(R.string.fantasy_cat),
-                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    "https://www.youtube.com/watch?v=jAy6NJ_D5vU",
                     R.drawable.daredevil);
 
             TVShow tvShow7 = new TVShow("Emily In Paris",
                     getResources().getString(R.string.drama_cat),
-                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    "https://www.youtube.com/watch?v=lptctjAT-Mk&t=36s",
                     R.drawable.emily_paris);
 
             TVShow tvShow8 = new TVShow("Friends",
                     getResources().getString(R.string.comedy_cat),
-                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    "https://www.youtube.com/watch?v=IEEbUzffzrk",
                     R.drawable.friends);
 
             TVShow tvShow9 = new TVShow("Fringe",
                     getResources().getString(R.string.fantasy_cat),
-                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    "https://www.youtube.com/watch?v=29bSzbqZ3xE",
                     R.drawable.fringe);
+
+            TVShow tvShow10 = new TVShow("The Big Bang Theory",
+                    getResources().getString(R.string.comedy_cat),
+                    "https://www.youtube.com/watch?v=WBb3fojgW0Q",
+                    R.drawable.big_bang_theory);
+
+            TVShow tvShow11 = new TVShow("La Casa De Papel",
+                    getResources().getString(R.string.action_cat),
+                    "https://www.youtube.com/watch?v=_InqQJRqGW4",
+                    R.drawable.la_casa_de_papel);
+
+            TVShow tvShow12 = new TVShow("Lost",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=KTu8iDynwNc",
+                    R.drawable.lost);
+
+            TVShow tvShow13 = new TVShow("Mr Robot",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=N6HGuJC--rk",
+                    R.drawable.mr_robot);
+
+            TVShow tvShow14 = new TVShow("Peaky Blinders",
+                    getResources().getString(R.string.crime_cat),
+                    "https://www.youtube.com/watch?v=oVzVdvGIC7U",
+                    R.drawable.peaky_blinders);
+
+            TVShow tvShow15 = new TVShow("The Vampire Diaries",
+                    getResources().getString(R.string.fantasy_cat),
+                    "https://www.youtube.com/watch?v=BmVmhjjkN4E",
+                    R.drawable.vampire_diaries);
+
+            TVShow tvShow16 = new TVShow("Veronica Mars",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=5KvBAa2PuVo",
+                    R.drawable.veronica_mars);
+
+            TVShow tvShow17 = new TVShow("From Scratch",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=pXm0SSnQW98&t=3s",
+                    R.drawable.from_scratch);
+
+            TVShow tvShow18 = new TVShow("Supernatural",
+                    getResources().getString(R.string.fantasy_cat),
+                    "https://www.youtube.com/watch?v=t-775JyzDTk",
+                    R.drawable.supernatural);
+
+            TVShow tvShow19 = new TVShow("Riverdale",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=HxtLlByaYTc",
+                    R.drawable.riverdale);
+
+            TVShow tvShow20 = new TVShow("Freaks and Geeks",
+                    getResources().getString(R.string.comedy_cat),
+                    "https://www.youtube.com/watch?v=E0oJ-uYWakw",
+                    R.drawable.freaks_geeks);
 
 
 
@@ -128,6 +189,17 @@ public class MainActivity extends AppCompatActivity {
             tvShows.add(tvShow7);
             tvShows.add(tvShow8);
             tvShows.add(tvShow9);
+            tvShows.add(tvShow10);
+            tvShows.add(tvShow11);
+            tvShows.add(tvShow12);
+            tvShows.add(tvShow13);
+            tvShows.add(tvShow14);
+            tvShows.add(tvShow15);
+            tvShows.add(tvShow16);
+            tvShows.add(tvShow17);
+            tvShows.add(tvShow18);
+            tvShows.add(tvShow19);
+            tvShows.add(tvShow20);
 
             for (TVShow tvShow : tvShows){
                 reference.child(""+tvShow.getName()).setValue(tvShow);
@@ -162,6 +234,20 @@ public class MainActivity extends AppCompatActivity {
 
         btnAppProposals.setOnClickListener(view -> {
 
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        TVShow tvShow = dataSnapshot.getValue(TVShow.class);
+                        tvShows.add(tvShow);
+                    }
+
+                    showUserTVShowsList(tvShows);
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}
+            });
+
         });
 
         btnUsersProposals.setOnClickListener(view -> {
@@ -194,6 +280,44 @@ public class MainActivity extends AppCompatActivity {
         ss.setSpan(fcsBlue, 5,9, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         ss.setSpan(fcsGreen, 10,12, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         txtAppTitle.setText(ss);
+    }
+
+    private void showUserTVShowsList(ArrayList<TVShow> shows) {
+
+        ArrayList<TVShow> myTVShows = new ArrayList<>();
+
+        referenceUsers.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    User user = dataSnapshot.getValue(User.class);
+                    users.add(user);
+                }
+
+                User currentUser = new User();
+                for (User user: users){
+                    if (user.getEmail().equals(mAuth.getCurrentUser().getEmail())) {
+                        currentUser = user;
+                        break;
+                    }
+                }
+
+                for (TVShow tvShow : shows){
+                    if (tvShow.getCategory().equals(currentUser.getFavCategory())){
+                        myTVShows.add(tvShow);
+                    }
+                }
+
+                Intent intent = new Intent(MainActivity.this, TVListActivity.class);
+                intent.putParcelableArrayListExtra("TV_LIST", myTVShows);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {}
+        });
+
     }
 
     private String setCurrentDate(){
