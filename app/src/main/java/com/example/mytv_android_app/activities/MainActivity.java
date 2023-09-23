@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtAppTitle, txtDate;
 
     Button btnAllShows, btnAppProposals, btnUsersProposals;
-    Button btnProfile, btnLogOut;
+    Button btnFavoriteShows, btnProfile, btnLogOut;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference, referenceUsers;
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnAllShows= findViewById(R.id.btnAllShows);
         btnAppProposals = findViewById(R.id.btnAppProposals);
         btnUsersProposals = findViewById(R.id.btnUsersProposals);
+        btnFavoriteShows = findViewById(R.id.btnFavoriteShows);
         btnProfile = findViewById(R.id.btnProfile);
         btnLogOut = findViewById(R.id.btnLogOut);
 
@@ -241,7 +242,6 @@ public class MainActivity extends AppCompatActivity {
                         TVShow tvShow = dataSnapshot.getValue(TVShow.class);
                         tvShows.add(tvShow);
                     }
-
                     showUserTVShowsList(tvShows);
                 }
                 @Override
@@ -252,6 +252,12 @@ public class MainActivity extends AppCompatActivity {
 
         btnUsersProposals.setOnClickListener(view -> {
 
+        });
+
+        btnFavoriteShows.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, FavoriteShowsActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         btnProfile.setOnClickListener(view -> {

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.FavoriteShowsActivity"
+    android:background="#C1D9EE">
+
+    <TextView
+        android:id="@+id/txtNoFavoriteShows"
+        android:layout_width="344dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="73dp"
+        android:gravity="center"
+        android:text="@string/no_favorite_shows"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/btnBackFavoriteShows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="667dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#EC0505"
+        android:gravity="center"
+        android:text="@string/back"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtUrFavoriteShows"
+        android:layout_width="336dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="@string/your_favorite_shows"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtFavShow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:textColor="#F44336"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtUrFavoriteShows"
+        app:layout_constraintStart_toStartOf="@+id/txtUrFavoriteShows"
+        app:layout_constraintTop_toBottomOf="@+id/txtUrFavoriteShows" />
+
+    <TextView
+        android:id="@+id/txtFavShow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="#F44336"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtFavShow1"
+        app:layout_constraintStart_toStartOf="@+id/txtFavShow1"
+        app:layout_constraintTop_toBottomOf="@+id/txtFavShow1" />
+
+    <TextView
+        android:id="@+id/txtFavShow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="#F44336"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtFavShow2"
+        app:layout_constraintStart_toStartOf="@+id/txtFavShow2"
+        app:layout_constraintTop_toBottomOf="@+id/txtFavShow2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,11 +12,11 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="54dp"
         android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/btnUsersProposals"
-        app:layout_constraintStart_toStartOf="@+id/btnUsersProposals"
-        app:layout_constraintTop_toBottomOf="@+id/btnUsersProposals" />
+        app:layout_constraintEnd_toEndOf="@+id/btnFavoriteShows"
+        app:layout_constraintStart_toStartOf="@+id/btnFavoriteShows"
+        app:layout_constraintTop_toBottomOf="@+id/btnFavoriteShows" />
 
     <TextView
         android:id="@+id/txtAppTitle"
@@ -89,15 +89,15 @@
         android:id="@+id/btnProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="105dp"
         android:backgroundTint="#D38005"
         android:gravity="center"
         android:text="@string/profile"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/btnUsersProposals"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/btnUsersProposals"
-        app:layout_constraintTop_toBottomOf="@+id/btnUsersProposals" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFavoriteShows" />
 
     <Button
         android:id="@+id/btnLogOut"
@@ -111,5 +111,18 @@
         app:layout_constraintEnd_toEndOf="@+id/btnProfile"
         app:layout_constraintStart_toStartOf="@+id/btnProfile"
         app:layout_constraintTop_toBottomOf="@+id/btnProfile" />
+
+    <Button
+        android:id="@+id/btnFavoriteShows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#3F51B5"
+        android:gravity="center"
+        android:text="@string/favorite_shows"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnUsersProposals"
+        app:layout_constraintStart_toStartOf="@+id/btnUsersProposals"
+        app:layout_constraintTop_toBottomOf="@+id/btnUsersProposals" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

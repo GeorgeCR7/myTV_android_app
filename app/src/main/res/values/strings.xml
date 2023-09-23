@@ -43,6 +43,7 @@
     <string name="app_proposals">Προτάσεις εφαρμογής</string>
     <string name="users_proposals">Προτάσεις χρηστών</string>
     <string name="all_shows">Όλες οι σειρές</string>
+    <string name="favorite_shows">Αγαπημένες σειρές</string>
 
 
     <string name="action_cat">Δράση/Περιπέτεια</string>
@@ -80,5 +81,9 @@
     <string name="tv_show_categ">Κατηγορία σειράς</string>
     <string name="favorite">Αγαπημένη!</string>
     <string name="favorite_added">Προστέθηκε στα αγαπημένα!</string>
+
+    <!-- Favorite Shows Activity -->
+    <string name="no_favorite_shows">Δεν έχεις προσθέσει αγαπημένες σειρές!</string>
+    <string name="your_favorite_shows">Οι αγαπημένες σού σειρές, είναι οι:</string>
 
 </resources>
