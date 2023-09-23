@@ -92,10 +92,42 @@ public class MainActivity extends AppCompatActivity {
                     "https://www.youtube.com/watch?v=AL9zLctDJaU",
                     R.drawable.prison_break);
 
+            TVShow tvShow5 = new TVShow("Chuck",
+                    getResources().getString(R.string.action_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.chuck);
+
+            TVShow tvShow6 = new TVShow("Marvel's Daredevil",
+                    getResources().getString(R.string.fantasy_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.daredevil);
+
+            TVShow tvShow7 = new TVShow("Emily In Paris",
+                    getResources().getString(R.string.drama_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.emily_paris);
+
+            TVShow tvShow8 = new TVShow("Friends",
+                    getResources().getString(R.string.comedy_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.friends);
+
+            TVShow tvShow9 = new TVShow("Fringe",
+                    getResources().getString(R.string.fantasy_cat),
+                    "https://www.youtube.com/watch?v=AL9zLctDJaU",
+                    R.drawable.fringe);
+
+
+
             tvShows.add(tvShow1);
             tvShows.add(tvShow2);
             tvShows.add(tvShow3);
             tvShows.add(tvShow4);
+            tvShows.add(tvShow5);
+            tvShows.add(tvShow6);
+            tvShows.add(tvShow7);
+            tvShows.add(tvShow8);
+            tvShows.add(tvShow9);
 
             for (TVShow tvShow : tvShows){
                 reference.child(""+tvShow.getName()).setValue(tvShow);
