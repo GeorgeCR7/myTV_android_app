@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TVShowActivity">
+    tools:context=".activities.TVShowActivity"
+    android:background="#C1D9EE">
 
     <ImageView
         android:id="@+id/tvShowImg"
@@ -75,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
-        android:backgroundTint="#D33A3A"
+        android:backgroundTint="#EC0505"
         android:gravity="center"
         android:text="@string/back"
         android:textAllCaps="false"

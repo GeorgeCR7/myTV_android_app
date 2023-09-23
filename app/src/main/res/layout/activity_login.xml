@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.LoginActivity"
+    android:background="#C1D9EE">
 
     <TextView
         android:id="@+id/txtLoginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="177dp"
         android:gravity="center"
         android:text="@string/login"
@@ -26,7 +27,7 @@
         android:id="@+id/edTxtLoginEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -53,7 +54,8 @@
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/login"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:backgroundTint="#AC720E"
         app:layout_constraintEnd_toEndOf="@+id/edTxtLoginPassword"
         app:layout_constraintStart_toStartOf="@+id/edTxtLoginPassword"
         app:layout_constraintTop_toBottomOf="@+id/edTxtLoginPassword" />
@@ -63,9 +65,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
+        android:backgroundTint="#AC720E"
         android:gravity="center"
         android:text="@string/new_user"
-        android:textSize="16sp"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="@+id/btnLogin"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
