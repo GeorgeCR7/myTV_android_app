@@ -74,13 +74,13 @@ public class FavoriteShowsActivity extends AppCompatActivity {
                     }
                 }
 
-                if (!currentUser.getFavShow1().equals("")){
+                if (!currentUser.getFavShow1().isEmpty()){
                     myFavoriteShows.add(currentUser.getFavShow1());
                 }
-                if (!currentUser.getFavShow2().equals("")){
+                if (!currentUser.getFavShow2().isEmpty()){
                     myFavoriteShows.add(currentUser.getFavShow2());
                 }
-                if (!currentUser.getFavShow3().equals("")){
+                if (!currentUser.getFavShow3().isEmpty()){
                     myFavoriteShows.add(currentUser.getFavShow3());
                 }
 
@@ -104,9 +104,16 @@ public class FavoriteShowsActivity extends AppCompatActivity {
             txtNoFavoriteShows.setVisibility(View.VISIBLE);
         } else {
             txtUrFavoriteShows.setVisibility(View.VISIBLE);
-            txtFavShow1.setText(shows.get(0));
-            txtFavShow2.setText(shows.get(1));
-            txtFavShow3.setText(shows.get(2));
+            if (shows.size() == 1){
+                txtFavShow1.setText(shows.get(0));
+            } else if (shows.size() == 2){
+                txtFavShow1.setText(shows.get(0));
+                txtFavShow2.setText(shows.get(1));
+            } else if (shows.size() == 3){
+                txtFavShow1.setText(shows.get(0));
+                txtFavShow2.setText(shows.get(1));
+                txtFavShow3.setText(shows.get(2));
+            }
         }
     }
 }
