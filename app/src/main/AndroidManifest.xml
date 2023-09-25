@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyTV_android_app"
         tools:targetApi="31">
         <activity
+            android:name=".activities.UsersProposalsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.FavoriteShowsActivity"
             android:exported="false" />
         <activity

@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<TVShow> tvShows;
     ArrayList<User> users;
 
+    ArrayList<String> myFavoriteShows;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         tvShows = new ArrayList<>();
         users = new ArrayList<>();
+        myFavoriteShows = new ArrayList<>();
 
         btnAllShows.setOnClickListener(view -> {
 
@@ -86,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {}
             });
-
         });
 
         btnAppProposals.setOnClickListener(view -> {
@@ -107,6 +109,41 @@ public class MainActivity extends AppCompatActivity {
 
         btnUsersProposals.setOnClickListener(view -> {
 
+            referenceUsers.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        User user = dataSnapshot.getValue(User.class);
+                        users.add(user);
+                    }
+
+                    User currentUser = new User();
+                    for (User user: users){
+                        if (user.getEmail().equals(mAuth.getCurrentUser().getEmail())) {
+                            currentUser = user;
+                            break;
+                        }
+                    }
+
+                    if (!currentUser.getFavShow1().isEmpty()){
+                        myFavoriteShows.add(currentUser.getFavShow1());
+                    }
+                    if (!currentUser.getFavShow2().isEmpty()){
+                        myFavoriteShows.add(currentUser.getFavShow2());
+                    }
+                    if (!currentUser.getFavShow3().isEmpty()){
+                        myFavoriteShows.add(currentUser.getFavShow3());
+                    }
+
+                    Intent intent = new Intent(MainActivity.this, UsersProposalsActivity.class);
+                    intent.putStringArrayListExtra("FAVORITE_SHOWS", myFavoriteShows);
+                    startActivity(intent);
+                    finish();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {}
+            });
         });
 
         btnFavoriteShows.setOnClickListener(view -> {

@@ -49,7 +49,7 @@ public class FavoriteShowsActivity extends AppCompatActivity {
         txtFavShow2 = findViewById(R.id.txtFavShow2);
         txtFavShow3 = findViewById(R.id.txtFavShow3);
 
-        btnBackFavoriteShows = findViewById(R.id.btnBackFavoriteShows);
+        btnBackFavoriteShows = findViewById(R.id.btnBackUsersProposals);
 
         users = new ArrayList<>();
         myFavoriteShows = new ArrayList<>();
